@@ -2,3 +2,4 @@
 
 export(AHNnD)
 export(SimAHNnD)
+importFrom(stats,runif)
