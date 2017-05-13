@@ -9,7 +9,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-`ahnr` is a package that implements the artificial hydrocarbon networks developed by [Hiram Ponce](http://www.up.edu.mx/es/investigador/25611/dr-hiram-eredin-ponce-espinosa). Most of the work is based on the book [Artificial Organic Networks](http://www.springer.com/gb/book/9783319024714).
+`ahnr` is a package that implements the artificial hydrocarbon networks developed by [Hiram Ponce](http://www.solariumlabs.com/hiram_ponce.html). Most of the work is based on the book [Artificial Organic Networks](http://www.springer.com/gb/book/9783319024714).
 
 ## Quick Start
 
@@ -35,7 +35,7 @@ plot(x, y, type = 'l')
 Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
 
 # Create network
-ahn <- AHNnD(Sigma, 5, 0.01, 2000)
+ahn <- AHNnD(Sigma, 5, 0.01, 500)
 ```
 
 ### Simulate a network
