@@ -30,7 +30,7 @@ y <- (x < 0.1) * (0.05 * runif(100) + atan(pi*x)) +
 Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
 
 # Train AHN
-ahn <- AHNnD(Sigma, 5, 0.01, 2000)
+ahn <- AHNnD(Sigma, 5, 0.01, 500)
 
 # Test AHN
 X <- data.frame(x = x)

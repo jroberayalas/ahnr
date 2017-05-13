@@ -26,7 +26,7 @@
 #' Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
 #'
 #' # Train AHN
-#' ahn <- AHNnD(Sigma, 5, 0.01, 2000)
+#' ahn <- AHNnD(Sigma, 5, 0.01, 500)
 #'
 AHNnD <- function(Sigma, n, eta, maxIter = 2000) {
     maxIter <- maxIter
@@ -140,7 +140,7 @@ AHNnD <- function(Sigma, n, eta, maxIter = 2000) {
 #' Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
 #'
 #' # Train AHN
-#' ahn <- AHNnD(Sigma, 5, 0.01, 2000)
+#' ahn <- AHNnD(Sigma, 5, 0.01, 500)
 #'
 #' # Test AHN
 #' X <- data.frame(x = x)
