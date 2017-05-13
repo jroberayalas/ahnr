@@ -1,7 +1,7 @@
 # ahnr
 [![Travis-CI Build Status](https://travis-ci.org/jroberayalas/ahnr.svg?branch=master)](https://travis-ci.org/jroberayalas/ahnr)
 
-`ahnr` is a package that implements the artificial hydrocarbon networks developed by [Hiram Ponce](http://www.up.edu.mx/es/investigador/25611/dr-hiram-eredin-ponce-espinosa). Most of the work is based on the book [Artificial Organic Networks](http://www.springer.com/gb/book/9783319024714).
+`ahnr` is a package that implements the artificial hydrocarbon networks developed by [Hiram Ponce](http://www.solariumlabs.com/hiram_ponce.html). Most of the work is based on the book [Artificial Organic Networks](http://www.springer.com/gb/book/9783319024714).
 
 ## Installation
 
