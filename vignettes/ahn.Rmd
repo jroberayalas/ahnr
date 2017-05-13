@@ -13,9 +13,9 @@ vignette: >
 
 ## Quick Start
 
-Here are some quick examples to get you started. To visualize the plots, make sure you have the packages `ggplot2` and `ggthemes` installed.
+Here are some quick examples to get you started.
 
-### Create a mixture
+## Create a network for a SISO sytem
 
 ```{r Example 1 Training}
 library(ahnr)
@@ -38,7 +38,7 @@ Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
 ahn <- AHNnD(Sigma, 5, 0.01, 500)
 ```
 
-### Simulate a network
+### Simulate the network
 
 ```{r Example 1 Simulation}
 # Create test data
@@ -49,4 +49,4 @@ plot(x, y, type = 'l')
 lines(x, ysim, type = 'l', col = 'red')
 ```
 
-### 2D problem
+## Create a network for a SISO sytem
