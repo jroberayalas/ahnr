@@ -71,12 +71,13 @@ AHNnD <- function(Sigma, n, eta, maxIter = 2000) {
             errorMolecule <- matrix(0, nrow = n+1, ncol = numOutputs)
 
             for (i in seq_len(length(molecules$SigmaSplit$X))) {
-                Xi <- molecules$SigmaSplit$X[[i]]
-                Yi <- molecules$SigmaSplit$Y[[i]]
+                moleculeUsed <- paste('molecule', molecules$moleculesUsed[i], sep = '')
+                Xi <- molecules$SigmaSplit$X[[moleculeUsed]]
+                Yi <- molecules$SigmaSplit$Y[[moleculeUsed]]
 
                 parameters <- ComputeMoleculeParameters(Xi, Yi, C$Omega[molecules$moleculesUsed[i]])
 
-                H[[names(molecules$SigmaSplit$X)[i]]] <- parameters$H
+                H[[moleculeUsed]] <- parameters$H
 
                 errorMolecule[molecules$moleculesUsed[i], ] <- parameters$errorMolecule
 
