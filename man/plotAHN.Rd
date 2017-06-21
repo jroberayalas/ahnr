@@ -84,6 +84,8 @@ plotAHN <- function(ahn) {
 Title
 }
 \examples{
+# Create data
+x <- 2 * runif(1000) - 1;
 x <- sort(x)
 
 y <- (x < 0.1) * (0.05 * runif(100) + atan(pi*x)) +
