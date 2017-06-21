@@ -38,7 +38,7 @@ plotAHN <- function(ahn) {
 }
 Plot Artificial Hydrocarbon Network}
 \usage{
-\method{plot}{ahn}(ahn)
+\method{plot}{ahn}(ahn, ...)
 }
 \arguments{
 \item{ahn}{an object of class "\code{ahn}" produced from the \link{AHNnD} function.}

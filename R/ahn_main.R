@@ -251,7 +251,7 @@ SimAHNnD <- function(ahn, X) {
 #'
 #' # Plot AHN
 #' plot(ahn)
-plot.ahn <- function(ahn) {
+plot.ahn <- function(ahn, ...) {
     vis <- CreateNodesEdges(ahn)
     visNetwork(vis$nodes, vis$edges, width = "100%") %>%
         visGroups(groupname = "C", color = "#fbb4ae") %>%
@@ -287,7 +287,7 @@ plot.ahn <- function(ahn) {
 #'
 #' # Summary AHN
 #' summary(ahn)
-summary.ahn <- function(ahn) {
+summary.ahn <- function(ahn, ...) {
     stopifnot(is.ahn(ahn))
     message('Hola!')
 }
