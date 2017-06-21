@@ -288,6 +288,7 @@ plot.ahn <- function(ahn) {
 #' # Summary AHN
 #' summary(ahn)
 summary.ahn <- function(ahn) {
-    a
+    stopifnot(is.ahn(ahn))
+    message('Hola!')
 }
 
