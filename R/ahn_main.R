@@ -1,11 +1,13 @@
 #' AHNnD
 #'
+#' @description Function to train an Artificial Hydrocarbon Network (AHN).
+#'
 #' @param Sigma a list with two data frames. One for the inputs X, and one for the outputs Y.
 #' @param n number of particles to use.
 #' @param eta learning rate of the algorithm. Default is \code{0.01}.
 #' @param maxIter maximum number of iterations.
 #'
-#' @return a list with the following components:
+#' @return an object of class "\code{ahn}" with the following components:
 #' \itemize{
 #'         \item network: structure of the AHN trained.
 #'         \item Yo: original output variable.
@@ -116,13 +118,17 @@ AHNnD <- function(Sigma, n, eta, maxIter = 2000) {
         iter <- iter + 1
     }
     network = list(H = ahn_H, Pi = ahn_Pi, n = n, C = C)
-    list(network = network, Yo = Yo, Ym = Ym)
+    ahn <- list(network = network, Yo = Yo, Ym = Ym)
+    class(ahn) <- "ahn"
+    ahn
 }
 
 
 #' SimAHNnD
 #'
-#' @param ahn a list produced from the \link{AHNnD} function.
+#' @description Function to simulate a trained Artificial Hydrocarbon Network.
+#'
+#' @param ahn an object of class "\code{ahn}" produced from the \link{AHNnD} function.
 #' @param X data frame with the inputs X to be predicted.
 #'
 #' @return predicted output values for inputs X.
@@ -219,9 +225,11 @@ SimAHNnD <- function(ahn, X) {
 #' }
 
 
-#' Title
+#' Plot Artificial Hydrocarbon Network
 #'
-#' @param ahn a list produced from the \link{AHNnD} function.
+#' @description Plot method for objects of class \code{ahn}.
+#'
+#' @param ahn an object of class "\code{ahn}" produced from the \link{AHNnD} function.
 #'
 #' @return dynamic visualization of the AHN.
 #' @export
@@ -242,8 +250,8 @@ SimAHNnD <- function(ahn, X) {
 #' ahn <- AHNnD(Sigma, 5, 0.01, 500)
 #'
 #' # Plot AHN
-#' plotAHN(ahn)
-plotAHN <- function(ahn) {
+#' plot(ahn)
+plot.ahn <- function(ahn) {
     vis <- CreateNodesEdges(ahn)
     visNetwork(vis$nodes, vis$edges, width = "100%") %>%
         visGroups(groupname = "C", color = "#fbb4ae") %>%
@@ -252,3 +260,34 @@ plotAHN <- function(ahn) {
         visGroups(groupname = "H3", color = "#decbe4") %>%
         visLegend(position = "right", main = "Legend")
 }
+
+#' Summary Artificial Hydrocarbon Network
+#'
+#' @description Summary method for objects of class \code{ahn}.
+#'
+#' @param ahn an object of class "\code{ahn}" produced from the \link{AHNnD} function.
+#'
+#' @return summary description of the AHN.
+#' @export
+#'
+#' @examples
+#' # Create data
+#' x <- 2 * runif(1000) - 1;
+#' x <- sort(x)
+#'
+#' y <- (x < 0.1) * (0.05 * runif(100) + atan(pi*x)) +
+#'     (x >= 0.1 & x < 0.6) * (0.05 * runif(1000) + sin(pi*x)) +
+#'     (x >= 0.6) * (0.05 * runif(1000) + cos(pi*x))
+#'
+#' # Create Sigma list
+#' Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
+#'
+#' # Train AHN
+#' ahn <- AHNnD(Sigma, 5, 0.01, 500)
+#'
+#' # Summary AHN
+#' summary(ahn)
+summary.ahn <- function(ahn) {
+    a
+}
+

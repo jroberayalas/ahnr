@@ -7,7 +7,7 @@
 SimAHNnD(ahn, X)
 }
 \arguments{
-\item{ahn}{a list produced from the \link{AHNnD} function.}
+\item{ahn}{an object of class "\code{ahn}" produced from the \link{AHNnD} function.}
 
 \item{X}{data frame with the inputs X to be predicted.}
 }
@@ -15,7 +15,7 @@ SimAHNnD(ahn, X)
 predicted output values for inputs X.
 }
 \description{
-SimAHNnD
+Function to simulate a trained Artificial Hydrocarbon Network.
 }
 \examples{
 # Create data

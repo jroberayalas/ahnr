@@ -16,7 +16,7 @@ AHNnD(Sigma, n, eta, maxIter = 2000)
 \item{maxIter}{maximum number of iterations.}
 }
 \value{
-a list with the following components:
+an object of class "\code{ahn}" with the following components:
 \itemize{
         \item network: structure of the AHN trained.
         \item Yo: original output variable.
@@ -24,7 +24,7 @@ a list with the following components:
 }
 }
 \description{
-AHNnD
+Function to train an Artificial Hydrocarbon Network (AHN).
 }
 \examples{
 # Create data
