@@ -22,8 +22,6 @@ Imports:
     pracma,
     purrr,
     pdist,
-    ggraph,
-    igraph,
     ggplot2,
     visNetwork,
     magrittr
