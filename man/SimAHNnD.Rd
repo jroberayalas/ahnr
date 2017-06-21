@@ -37,4 +37,3 @@ X <- data.frame(x = x)
 ysim <- SimAHNnD(ahn, X)
 
 }
-

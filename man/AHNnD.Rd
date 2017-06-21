@@ -42,4 +42,3 @@ Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
 ahn <- AHNnD(Sigma, 5, 0.01, 500)
 
 }
-

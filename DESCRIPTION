@@ -21,5 +21,10 @@ Imports:
     matrixcalc,
     pracma,
     purrr,
-    pdist
-RoxygenNote: 5.0.1
+    pdist,
+    ggraph,
+    igraph,
+    ggplot2,
+    visNetwork,
+    magrittr
+RoxygenNote: 6.0.1

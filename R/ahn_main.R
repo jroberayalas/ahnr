@@ -181,3 +181,73 @@ SimAHNnD <- function(ahn, X) {
     ix <- sort(indexes, index.return = TRUE)$ix;
     Y <- Yapprox[ix, ]
 }
+
+
+#' #' plotAHN
+#' #'
+#' #' @param ahn a list produced from the \link{AHNnD} function.
+#' #'
+#' #' @return visualization of the AHN.
+#' #' @export
+#' #'
+#' #' @examples
+#' #' # Create data
+#' #' x <- 2 * runif(1000) - 1;
+#' #' x <- sort(x)
+#' #'
+#' #' y <- (x < 0.1) * (0.05 * runif(100) + atan(pi*x)) +
+#' #'     (x >= 0.1 & x < 0.6) * (0.05 * runif(1000) + sin(pi*x)) +
+#' #'     (x >= 0.6) * (0.05 * runif(1000) + cos(pi*x))
+#' #'
+#' #' # Create Sigma list
+#' #' Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
+#' #'
+#' #' # Train AHN
+#' #' ahn <- AHNnD(Sigma, 5, 0.01, 500)
+#' #'
+#' #' # Plot AHN
+#' #' plotAHN(ahn)
+#' #'
+#' plotAHN <- function(ahn) {
+#'     vis <- CreateNodesEdges(ahn)
+#'     graph <- igraph::graph_from_data_frame(vis$edges, directed = FALSE, vertices = vis$nodes)
+#'     ggraph(graph, layout = 'graphopt') +
+#'         geom_edge_link(aes(start_cap = label_rect(node1.name),
+#'                            end_cap = label_rect(node2.name))) +
+#'         geom_node_text(label = vis$nodes$label) +
+#'         theme_void()
+#' }
+
+
+#' Title
+#'
+#' @param ahn a list produced from the \link{AHNnD} function.
+#'
+#' @return dynamic visualization of the AHN.
+#' @export
+#'
+#' @examples
+# Create data#' x <- 2 * runif(1000) - 1;
+#' x <- sort(x)
+#'
+#' y <- (x < 0.1) * (0.05 * runif(100) + atan(pi*x)) +
+#'     (x >= 0.1 & x < 0.6) * (0.05 * runif(1000) + sin(pi*x)) +
+#'     (x >= 0.6) * (0.05 * runif(1000) + cos(pi*x))
+#'
+#' # Create Sigma list
+#' Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
+#'
+#' # Train AHN
+#' ahn <- AHNnD(Sigma, 5, 0.01, 500)
+#'
+#' # Plot AHN
+#' plotAHN(ahn)
+plotAHN <- function(ahn) {
+    vis <- CreateNodesEdges(ahn)
+    visNetwork(vis$nodes, vis$edges, width = "100%") %>%
+        visGroups(groupname = "C", color = "#fbb4ae") %>%
+        visGroups(groupname = "H1", color = "#b3cde3") %>%
+        visGroups(groupname = "H2", color = "#ccebc5") %>%
+        visGroups(groupname = "H3", color = "#decbe4") %>%
+        visLegend(position = "right", main = "Legend")
+}

@@ -143,3 +143,43 @@ SimDataInMolecules <- function(X, posMolecules) {
     SigmaSplit <- list(X = SigmaSplitX, Index = SigmaSplitIndex)
     SigmaSplit
 }
+
+# CreateLabels creates the labels for the network visualization
+CreateLabels <- function(molecule, dimensions) {
+    molecule_split <- split(molecule, ceiling(seq_len(length(molecule)) / (length(molecule) / dimensions)))
+    do.call(paste, c(molecule_split, sep = "\n"))
+}
+
+# CreateNodes creates the data frame for the nodes of the network
+CreateNodesEdges <- function(ahn) {
+    label <- vector('numeric')
+    id <- vector('character')
+    group <- vector('character')
+    from <- paste('C', seq_len(ahn$network$n - 1), sep = '')
+    to <- paste('C', seq_len(ahn$network$n - 1) + 1, sep = '')
+    for (i in seq_len(ahn$network$n)) {
+        label <- c(label, CreateLabels(round(ahn$network$H[[paste('molecule', i, sep = "")]][ , 1], 3), ncol(ahn$network$Pi)))
+
+        carbon <- paste('C', i, sep = '')
+        hydrogens <- paste('H', i, seq_len(ahn$network$C$Omega[i]), sep = '')
+
+        id <- c(id, carbon, hydrogens)
+
+        group <- c(group, "C", paste('H', seq_len(ahn$network$C$Omega[i]), sep = ''))
+
+        from <- c(from, rep(carbon, ahn$network$C$Omega[i]))
+        to <- c(to, hydrogens)
+    }
+
+    nodes <- data.frame(id = id,
+                        shape = 'circle',
+                        shadow = FALSE,
+                        label = label,
+                        group = group,
+                        font.color =c ("red", rep("black", length(id)-1)))
+
+    edges <- data.frame(from = from,
+                        to = to)
+
+    list(nodes = nodes, edges = edges)
+}
