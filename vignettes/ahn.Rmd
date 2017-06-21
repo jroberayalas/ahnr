@@ -50,7 +50,7 @@ lines(x, ysim, type = 'l', col = 'red')
 ```
 
 ```{r Example 1 Network Visualization}
-plotAHN(ahn)
+#plotAHN(ahn)
 ```
 
 
@@ -76,5 +76,5 @@ lines(seq_along(ysim), ysim, col = 'red')
 ```
 
 ```{r Example 2 Network Visualization}
-plotAHN(ahn)
+#plotAHN(ahn)
 ```
