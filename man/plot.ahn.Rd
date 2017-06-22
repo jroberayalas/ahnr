@@ -38,10 +38,12 @@ plotAHN <- function(ahn) {
 }
 Plot Artificial Hydrocarbon Network}
 \usage{
-\method{plot}{ahn}(ahn, ...)
+\method{plot}{ahn}(x, ...)
 }
 \arguments{
-\item{ahn}{an object of class "\code{ahn}" produced from the \link{AHNnD} function.}
+\item{x}{an object of class "\code{ahn}" produced from the \link{AHNnD} function.}
+
+\item{...}{further arguments passed to visNetwork functions.}
 }
 \value{
 dynamic visualization of the AHN.
