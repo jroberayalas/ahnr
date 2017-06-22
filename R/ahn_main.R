@@ -12,6 +12,9 @@
 #'         \item network: structure of the AHN trained.
 #'         \item Yo: original output variable.
 #'         \item Ym: predicted output variable.
+#'         \item eta: learning rate.
+#'         \item minOverallError: minimum error achieved.
+#'         \item variableNames: names of the input variables.
 #' }
 #' @export
 #'
@@ -118,7 +121,12 @@ AHNnD <- function(Sigma, n, eta, maxIter = 2000) {
         iter <- iter + 1
     }
     network = list(H = ahn_H, Pi = ahn_Pi, n = n, C = C)
-    ahn <- list(network = network, Yo = Yo, Ym = Ym)
+    ahn <- list(network = network,
+                Yo = Yo,
+                Ym = Ym,
+                eta = eta,
+                minOverallError = minOverallError,
+                variableNames = names(Sigma$X))
     class(ahn) <- "ahn"
     ahn
 }
@@ -229,7 +237,8 @@ SimAHNnD <- function(ahn, X) {
 #'
 #' @description Plot method for objects of class \code{ahn}.
 #'
-#' @param ahn an object of class "\code{ahn}" produced from the \link{AHNnD} function.
+#' @param x an object of class "\code{ahn}" produced from the \link{AHNnD} function.
+#' @param ... further arguments passed to visNetwork functions.
 #'
 #' @return dynamic visualization of the AHN.
 #' @export
@@ -251,21 +260,22 @@ SimAHNnD <- function(ahn, X) {
 #'
 #' # Plot AHN
 #' plot(ahn)
-plot.ahn <- function(ahn, ...) {
-    vis <- CreateNodesEdges(ahn)
-    visNetwork(vis$nodes, vis$edges, width = "100%") %>%
-        visGroups(groupname = "C", color = "#fbb4ae") %>%
-        visGroups(groupname = "H1", color = "#b3cde3") %>%
-        visGroups(groupname = "H2", color = "#ccebc5") %>%
-        visGroups(groupname = "H3", color = "#decbe4") %>%
-        visLegend(position = "right", main = "Legend")
+plot.ahn <- function(x, ...) {
+    vis <- CreateNodesEdges(x)
+    visNetwork(vis$nodes, vis$edges, width = "100%", ...) %>%
+        visGroups(groupname = "C", color = "#fbb4ae", ...) %>%
+        visGroups(groupname = "H1", color = "#b3cde3", ...) %>%
+        visGroups(groupname = "H2", color = "#ccebc5", ...) %>%
+        visGroups(groupname = "H3", color = "#decbe4", ...) %>%
+        visLegend(position = "right", main = "Legend", ...)
 }
 
 #' Summary Artificial Hydrocarbon Network
 #'
 #' @description Summary method for objects of class \code{ahn}.
 #'
-#' @param ahn an object of class "\code{ahn}" produced from the \link{AHNnD} function.
+#' @param object an object of class "\code{ahn}" produced from the \link{AHNnD} function.
+#' @param ... further arguments passed to or from other methods.
 #'
 #' @return summary description of the AHN.
 #' @export
@@ -287,8 +297,21 @@ plot.ahn <- function(ahn, ...) {
 #'
 #' # Summary AHN
 #' summary(ahn)
-summary.ahn <- function(ahn, ...) {
-    stopifnot(is.ahn(ahn))
-    message('Hola!')
+summary.ahn <- function(object, ...) {
+    stopifnot(is.ahn(object))
+    ahn <- object
+    cat("\nArtificial Hydrocarbon Network trained:\n\n")
+    cat("Number of molecules:\n", ahn$network$n, "\n\n")
+    cat("Learning factor:\n", ahn$eta, "\n\n")
+    cat("Overall error:\n", round(ahn$minOverallError, 4), "\n\n")
+
+    centers <- ahn$network$Pi
+    rownames(centers) <- paste('molecule', seq_len(nrow(centers)), sep = "")
+    colnames(centers) <- ahn$variableNames
+    cat("Centers of the molecules:\n")
+    print(as.table(centers))
+
+    cat("\nMolecules:\n")
+    CreateTable(ahn)
 }
 

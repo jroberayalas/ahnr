@@ -21,6 +21,9 @@ an object of class "\code{ahn}" with the following components:
         \item network: structure of the AHN trained.
         \item Yo: original output variable.
         \item Ym: predicted output variable.
+        \item eta: learning rate.
+        \item minOverallError: minimum error achieved.
+        \item variableNames: names of the input variables.
 }
 }
 \description{
