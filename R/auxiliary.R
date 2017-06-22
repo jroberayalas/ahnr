@@ -186,3 +186,22 @@ CreateNodesEdges <- function(ahn) {
 
     list(nodes = nodes, edges = edges)
 }
+
+CreateTable <- function(ahn) {
+    for (i in seq_len(ahn$network$n)) {
+        cat("Molecule ", i,":\n", sep = "")
+
+        molecule <- round(ahn$network$H[[paste('molecule', i, sep = "")]][ , 1], 3)
+        dimensions <- ncol(ahn$network$Pi)
+        molecule_split <- split(molecule, ceiling(seq_len(length(molecule)) / (length(molecule) / dimensions)))
+        names(molecule_split) <- ahn$variableNames
+        molecule_table <- as.data.frame(molecule_split)
+
+        carbon <- paste('C', i, sep = '')
+        hydrogens <- paste('H', i, seq_len(ahn$network$C$Omega[i]), sep = '')
+        rownames(molecule_table) <- c(carbon, hydrogens)
+
+        print(molecule_table)
+        cat("\n")
+    }
+}
