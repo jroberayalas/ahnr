@@ -49,6 +49,10 @@ plot(x, y, type = 'l')
 lines(x, ysim, type = 'l', col = 'red')
 ```
 
+```{r Example 1 Summary}
+summary(ahn)
+```
+
 ```{r Example 1 Network Visualization}
 plot(ahn)
 ```
@@ -73,6 +77,10 @@ ysim <- SimAHNnD(ahn, X)
 
 plot(seq_along(Y$y), Y$y, type = 'l', col = 'black')
 lines(seq_along(ysim), ysim, col = 'red')
+```
+
+```{r Example 2 Summary}
+summary(ahn)
 ```
 
 ```{r Example 2 Network Visualization}
