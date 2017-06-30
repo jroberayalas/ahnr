@@ -9,13 +9,15 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-`ahnr` is a package that implements the artificial hydrocarbon networks developed by [Hiram Ponce](http://www.solariumlabs.com/hiram_ponce.html). Most of the work is based on the book [Artificial Organic Networks](http://www.springer.com/gb/book/9783319024714).
+`ahnr` is a package that implements the artificial hydrocarbon networks developed by [Hiram Ponce](http://www.up.edu.mx/es/investigador/25611/hiram-eredin-ponce-espinosa-dr). Most of the work is based on the book [Artificial Organic Networks](http://www.springer.com/gb/book/9783319024714).
 
 ## Quick Start
 
 Here are some quick examples to get you started.
 
 ## Create a network for a SISO sytem
+
+The following code let's you create the data to train an artificial hydrocarbon network.
 
 ```{r Example 1 Training}
 library(ahnr)
@@ -38,6 +40,8 @@ Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
 ahn <- AHNnD(Sigma, 5, 0.01, 1000)
 ```
 
+The trained network can be used to visualize its performance.
+
 ```{r Example 1 Simulation}
 # Create test data
 X <- data.frame(x = x)
@@ -49,9 +53,13 @@ plot(x, y, type = 'l')
 lines(x, ysim, type = 'l', col = 'red')
 ```
 
+A summary of the network can be obtained with the `summary` command.
+
 ```{r Example 1 Summary}
 summary(ahn)
 ```
+
+Finally, the network itself can be plotted with the `plot` command.
 
 ```{r Example 1 Network Visualization}
 plot(ahn)
