@@ -68,7 +68,7 @@ plot(ahn)
 
 ## Create a network for a MISO sytem
 
-```{r}
+```{r Example 2 Training and Simulation}
 # Create data
 t <- seq(0, 15, 0.01)
 X <- data.frame(x1 = cos(t), x2 = t)
