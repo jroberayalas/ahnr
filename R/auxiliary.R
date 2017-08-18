@@ -23,7 +23,7 @@ ComputeMoleculeParameters <- function(Xi, Yi, Omegai) {
     H <- pracma::mldivide(Phi, as.matrix(Yi))
     Yapprox <- Phi %*% H
 
-    errorMolecule <- sqrt(mean(abs((Yapprox - Yi)^2)))
+    errorMolecule <- sqrt(mean(abs((Yapprox - as.matrix(Yi)^2))))
 
     list(H = H, Yapprox = Yapprox, errorMolecule = errorMolecule)
 }
