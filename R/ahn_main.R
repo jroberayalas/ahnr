@@ -34,6 +34,8 @@
 #' ahn <- AHNnD(Sigma, 5, 0.01, 500)
 #'
 AHNnD <- function(Sigma, n, eta, maxIter = 2000) {
+    # Security Checking
+
     maxIter <- maxIter
     iter <- 1
 

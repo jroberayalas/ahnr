@@ -3,22 +3,24 @@ CH_X <- function(X, h) {
     N <- ncol(X)
     q <- nrow(X)
 
-    Phi <- matrix(0, nrow = q)
+    Phi <- matrix(0, nrow = q, ncol = N * (h+1))
 
     for (i in seq_len(N)) {
-        Phi <- cbind(Phi, matrixcalc::vandermonde.matrix(X[ , i], h+1))
+        #Phi <- cbind(Phi, matrixcalc::vandermonde.matrix(X[ , i], h+1))
+        Phi[ , (1:(h+1)) + (i-1)*(h+1)] <- matrixcalc::vandermonde.matrix(X[ , i], h+1)
     }
-    Phi <- Phi[ , -1]
+    #Phi <- Phi[ , -1]
+
+    if (is.vector(Phi)) {
+        Phi <- matrix(Phi, nrow = 1)
+    }
+
     Phi
 }
 
 # ComputeMoleculeParameters solves the system of equations with Least Squares
 ComputeMoleculeParameters <- function(Xi, Yi, Omegai) {
     Phi <- CH_X(Xi, Omegai)
-
-    if (is.vector(Phi)) {
-        Phi <- matrix(Phi, nrow = 1)
-    }
 
     H <- pracma::mldivide(Phi, as.matrix(Yi))
     Yapprox <- Phi %*% H

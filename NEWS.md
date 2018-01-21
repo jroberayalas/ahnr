@@ -1,3 +1,7 @@
+# ahnr 0.2.1
+
+* Correction to the labels of the second plot in the vignette.
+
 # ahnr 0.2.0
 
 * Added legends in the plots of the vignette file.
