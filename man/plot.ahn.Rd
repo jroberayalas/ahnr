@@ -2,46 +2,12 @@
 % Please edit documentation in R/ahn_main.R
 \name{plot.ahn}
 \alias{plot.ahn}
-\title{#' plotAHN
-#'
-#' @param ahn a list produced from the \link{AHNnD} function.
-#'
-#' @return visualization of the AHN.
-#' @export
-#'
-#' @examples
-#' # Create data
-#' x <- 2 * runif(1000) - 1;
-#' x <- sort(x)
-#'
-#' y <- (x < 0.1) * (0.05 * runif(100) + atan(pi*x)) +
-#'     (x >= 0.1 & x < 0.6) * (0.05 * runif(1000) + sin(pi*x)) +
-#'     (x >= 0.6) * (0.05 * runif(1000) + cos(pi*x))
-#'
-#' # Create Sigma list
-#' Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
-#'
-#' # Train AHN
-#' ahn <- AHNnD(Sigma, 5, 0.01, 500)
-#'
-#' # Plot AHN
-#' plotAHN(ahn)
-#'
-plotAHN <- function(ahn) {
-    vis <- CreateNodesEdges(ahn)
-    graph <- igraph::graph_from_data_frame(vis$edges, directed = FALSE, vertices = vis$nodes)
-    ggraph(graph, layout = 'graphopt') +
-        geom_edge_link(aes(start_cap = label_rect(node1.name),
-                           end_cap = label_rect(node2.name))) +
-        geom_node_text(label = vis$nodes$label) +
-        theme_void()
-}
-Plot Artificial Hydrocarbon Network}
+\title{Plot Artificial Hydrocarbon Network}
 \usage{
 \method{plot}{ahn}(x, ...)
 }
 \arguments{
-\item{x}{an object of class "\code{ahn}" produced from the \link{AHNnD} function.}
+\item{x}{an object of class "\code{ahn}" produced from the \link{fit} function.}
 
 \item{...}{further arguments passed to visNetwork functions.}
 }
@@ -52,6 +18,7 @@ dynamic visualization of the AHN.
 Plot method for objects of class \code{ahn}.
 }
 \examples{
+\dontrun{
 # Create data
 x <- 2 * runif(1000) - 1;
 x <- sort(x)
@@ -64,8 +31,10 @@ y <- (x < 0.1) * (0.05 * runif(100) + atan(pi*x)) +
 Sigma <- list(X = data.frame(x = x), Y = data.frame(y = y))
 
 # Train AHN
-ahn <- AHNnD(Sigma, 5, 0.01, 500)
+ahn <- fit(Sigma, 5, 0.01, 500)
 
 # Plot AHN
 plot(ahn)
+}
+
 }

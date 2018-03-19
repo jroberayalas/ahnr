@@ -1,3 +1,9 @@
+# ahnr 0.3.0
+
+* Generic functions updated: summary, predict, plot.
+* AHNnD function name changed to fit.
+* SimAHNnD function name changed to predict.
+
 # ahnr 0.2.1
 
 * Correction to the labels of the second plot in the vignette.

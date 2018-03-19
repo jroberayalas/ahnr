@@ -146,8 +146,6 @@ SimDataInMolecules <- function(X, posMolecules) {
     SigmaSplit
 }
 
-# is.ahn function to check if an object is of class "ahn"
-is.ahn <- function(x) inherits(x, "ahn")
 
 # CreateLabels creates the labels for the network visualization
 CreateLabels <- function(molecule, dimensions) {
