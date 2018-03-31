@@ -1,4 +1,4 @@
-# ahnr <img src="man/figures/AON_molecule.png" align="right" />
+# ahnr <img src="man/figures/AON_molecule.png" align="right" width="50%"/>
 [![Travis-CI Build Status](https://travis-ci.org/jroberayalas/ahnr.svg?branch=master)](https://travis-ci.org/jroberayalas/ahnr)
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/ahnr)](https://CRAN.R-project.org/package=ahnr)
 
