@@ -123,7 +123,7 @@ y &lt;-<span class="st"> </span>(x <span class="op">&lt;</span><span class="st">
 <span class="st">    </span>(x <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.6</span>) <span class="op">*</span><span class="st"> </span>(<span class="fl">0.05</span> <span class="op">*</span><span class="st"> </span><span class="kw">runif</span>(<span class="dv">1000</span>) <span class="op">+</span><span class="st"> </span><span class="kw">cos</span>(pi<span class="op">*</span>x))
 
 <span class="kw"><a href="../reference/plot.html">plot</a></span>(x, y, <span class="dt">type =</span> <span class="st">'l'</span>)</code></pre></div>
-<p><img src="ahn_files/figure-html/Example%201%20Training-1.png" width="700"></p>
+<p><img src="ahn_files/figure-html/Example_1_Training-1.png" width="672"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create the Sigma dataset</span>
 Sigma &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">X =</span> <span class="kw">data.frame</span>(<span class="dt">x =</span> x), <span class="dt">Y =</span> <span class="kw">data.frame</span>(<span class="dt">y =</span> y))
 
@@ -139,7 +139,7 @@ ysim &lt;-<span class="st"> </span><span class="kw"><a href="../reference/predic
 <span class="kw"><a href="../reference/plot.html">plot</a></span>(x, y, <span class="dt">type =</span> <span class="st">'l'</span>)
 <span class="kw">lines</span>(x, ysim, <span class="dt">type =</span> <span class="st">'l'</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">'red'</span>)
 <span class="kw">legend</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="kw">c</span>(<span class="st">'Original'</span>, <span class="st">'Simulation'</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">lty =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">cex =</span> <span class="fl">0.8</span>)</code></pre></div>
-<p><img src="ahn_files/figure-html/Example%201%20Simulation-1.png" width="700"></p>
+<p><img src="ahn_files/figure-html/Example_1_Simulation-1.png" width="672"></p>
 <p>A summary of the network can be obtained with the <code>summary</code> command.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/summary.html">summary</a></span>(ahn)</code></pre></div>
 <pre><code>## 
@@ -213,7 +213,7 @@ ysim &lt;-<span class="st"> </span><span class="kw"><a href="../reference/predic
 <span class="kw"><a href="../reference/plot.html">plot</a></span>(t, Y<span class="op">$</span>y, <span class="dt">type =</span> <span class="st">'l'</span>, <span class="dt">col =</span> <span class="st">'black'</span>, <span class="dt">xlab =</span> <span class="st">'t'</span>, <span class="dt">ylab =</span> <span class="st">'y'</span>)
 <span class="kw">lines</span>(t, ysim, <span class="dt">type =</span> <span class="st">'l'</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">'red'</span>)
 <span class="kw">legend</span>(<span class="dv">0</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="kw">c</span>(<span class="st">'Original'</span>, <span class="st">'Simulation'</span>), <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">lty =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="dt">cex =</span> <span class="fl">0.6</span>)</code></pre></div>
-<p><img src="ahn_files/figure-html/Example%202%20Training%20and%20Simulation-1.png" width="700"></p>
+<p><img src="ahn_files/figure-html/Example_2_Training_and_Simulation-1.png" width="672"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/summary.html">summary</a></span>(ahn)</code></pre></div>
 <pre><code>## 
 ## Artificial Hydrocarbon Network trained:
