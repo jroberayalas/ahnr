@@ -42,7 +42,7 @@ ahn <- fit(Sigma, 4, 0.01, 2000)
 
 The trained network can be used to visualize its performance.
 
-```{r Example 1 Simulation}
+```{r Example_1_Simulation}
 # Create test data
 X <- data.frame(x = x)
 
@@ -56,20 +56,20 @@ legend(-1, 1, c('Original', 'Simulation'), col = c(1,2), lty = c(1,2), cex = 0.8
 
 A summary of the network can be obtained with the `summary` command.
 
-```{r Example 1 Summary}
+```{r Example_1_Summary}
 summary(ahn)
 ```
 
 Finally, the network itself can be plotted with the `plot` command. The text of the carbon of the first molecule is in red.
 
-```{r Example 1 Network Visualization}
+```{r Example_1_Network_Visualization}
 plot(ahn)
 ```
 
 
 ## Create a network for a MISO sytem
 
-```{r Example 2 Training and Simulation}
+```{r Example_2_Training_and_Simulation, fig.width=7, fig.height=3}
 # Create data
 set.seed(12321)
 t <- seq(0, 15, 0.01)
@@ -90,10 +90,10 @@ lines(t, ysim, type = 'l', lty = 2, col = 'red')
 legend(0, -0.5, c('Original', 'Simulation'), col = c(1,2), lty = c(1,2), cex = 0.6)
 ```
 
-```{r Example 2 Summary}
+```{r Example_2_Summary}
 summary(ahn)
 ```
 
-```{r Example 2 Network Visualization}
+```{r Example_2_Network_Visualization}
 plot(ahn)
 ```
