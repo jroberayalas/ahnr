@@ -6,7 +6,7 @@
 
 ## Installation
 
-You can install `ahnr` from CRAN:
+You can install the `ahnr` package from CRAN:
 
 ```R
 install.packages("ahnr")
@@ -20,4 +20,4 @@ devtools::install_github('jroberayalas/ahnr')
 ```
 ## Quick Start
 
-For a quick start with the package, check the [vignette](https://github.com/jroberayalas/ahnr/blob/master/vignettes/ahn.Rmd).
+For a quick start with the package, check the [vignette](https://jroberayalas.github.io/ahnr/articles/ahn.html).
