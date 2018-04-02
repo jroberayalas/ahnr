@@ -6,7 +6,13 @@
 
 ## Installation
 
-You can install `ahnr` from GitHub using the `devtools` package:
+You can install `ahnr` from CRAN:
+
+```R
+install.packages("ahnr")
+```
+
+The development version can be installed from GitHub using the `devtools` package:
 
 ```R
 install.packages("devtools")
