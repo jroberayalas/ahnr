@@ -299,7 +299,7 @@ predict.ahn <- function(x, new_data, ...) {
     C <- ahn$network$C
 
     # Initial statemets
-    Yapprox <- matrix(0, nrow = nrow(new_data), ncol = ncol(H[[1]]))
+    Yapprox <- matrix(0, nrow = nrow(new_data), ncol = max(unlist(sapply(H, ncol))))
     indexes <- rep(0, nrow(new_data))
 
     # Distribute data over molecules
@@ -314,6 +314,9 @@ predict.ahn <- function(x, new_data, ...) {
 
         ki <- C$Omega[i]
         Phi <- CH_X(Xi, ki)
+
+        if (is.null(H[[i]])) {next}
+
         Ym <- Phi %*% H[[i]]
 
         pointerNew <- pointer + nrow(Ym)

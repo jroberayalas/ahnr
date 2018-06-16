@@ -3,6 +3,8 @@
 * Generic functions updated: summary, predict, plot.
 * AHNnD function name changed to fit.
 * SimAHNnD function name changed to predict.
+* Fix in `predict` function: ncol(H[[1]]) --> max(unlist(sapply(H, ncol)))
+* Fix in `predict` function to handle empty molecules: if (is.null(H[[i]])) {next}
 
 # ahnr 0.2.1
 
