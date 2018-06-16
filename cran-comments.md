@@ -5,10 +5,7 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
-
-* Files ‘README.md’ or ‘NEWS.md’ cannot be checked without ‘pandoc’ being installed.
-* Non-standard file/directory found at top level: ‘docs’
+0 errors | 0 warnings | 0 note
 
 ## Reverse dependencies
 
