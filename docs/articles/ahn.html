@@ -8,8 +8,8 @@
 <title>Artificial Hydrocarbon Networks in R • ahnr</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script><script src="../pkgdown.js"></script><meta property="og:title" content="Artificial Hydrocarbon Networks in R">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Artificial Hydrocarbon Networks in R">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -76,16 +76,17 @@
 <!--/.navbar -->
 
       
-      </header><script src="ahn_files/htmlwidgets-0.9/htmlwidgets.js"></script><link href="ahn_files/vis-4.20.1/vis.css" rel="stylesheet">
-<script src="ahn_files/vis-4.20.1/vis.min.js"></script><script src="ahn_files/visNetwork-binding-2.0.3/visNetwork.js"></script><div class="row">
+      </header><script src="ahn_files/htmlwidgets-1.2/htmlwidgets.js"></script><link href="ahn_files/vis-4.20.1/vis.css" rel="stylesheet">
+<script src="ahn_files/vis-4.20.1/vis.min.js"></script><script src="ahn_files/visNetwork-binding-2.0.4/visNetwork.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Artificial Hydrocarbon Networks in R</h1>
                         <h4 class="author">Jose Roberto Ayala Solares</h4>
             
-            <h4 class="date">2018-04-03</h4>
+            <h4 class="date">2018-06-16</h4>
       
-      <small>Source: <a href="https://github.com/jroberayalas/ahnr/blob/master/vignettes/ahn.Rmd"><code>vignettes/ahn.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/jroberayalas/ahnr/blob/master/vignettes/ahn.Rmd"><code>vignettes/ahn.Rmd</code></a></small>
+      <div class="hidden name"><code>ahn.Rmd</code></div>
 
     </div>
 
@@ -189,7 +190,7 @@ ysim &lt;-<span class="st"> </span><span class="kw"><a href="../reference/predic
 ## H43   4.771</code></pre>
 <p>Finally, the network itself can be plotted with the <code>plot</code> command. The text of the carbon of the first molecule is in red.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plot.html">plot</a></span>(ahn)</code></pre></div>
-<div id="htmlwidget-4242f2fabc496833c4be" style="width:100%;height:1132.6px;" class="visNetwork html-widget"></div>
+<div id="htmlwidget-4242f2fabc496833c4be" style="width:100%;height:432.632880098888px;" class="visNetwork html-widget"></div>
 <script type="application/json" data-for="htmlwidget-4242f2fabc496833c4be">{"x":{"nodes":{"id":["C1","H11","H12","H13","C2","H21","H22","C3","H31","H32","C4","H41","H42","H43"],"shape":["circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle"],"shadow":[false,false,false,false,false,false,false,false,false,false,false,false,false,false],"label":["0.035","3.527","3.709","1.466","3.089","-7.914","3.842","0.031","3.295","-2.165","-0.641","7.889","-11.506","4.771"],"group":["C","H1","H2","H3","C","H1","H2","C","H1","H2","C","H1","H2","H3"],"font.color":["red","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"edges":{"from":["C1","C2","C3","C1","C1","C1","C2","C2","C3","C3","C4","C4","C4"],"to":["C2","C3","C4","H11","H12","H13","H21","H22","H31","H32","H41","H42","H43"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"groups":{"C":{"color":"#fbb4ae"},"H1":{"color":"#b3cde3"},"H2":{"color":"#ccebc5"},"useDefaultGroups":true,"H3":{"color":"#decbe4"}}},"groups":["C","H1","H2","H3"],"width":"100%","height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","legend":{"width":0.2,"useGroups":true,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"main":{"text":"Legend","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:14px;text-align:center;"}}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="create-a-network-for-a-miso-sytem" class="section level2">
@@ -268,7 +269,7 @@ ysim &lt;-<span class="st"> </span><span class="kw"><a href="../reference/predic
 ## H52  1.908   2.992
 ## H53 -0.864  -0.118</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plot.html">plot</a></span>(ahn)</code></pre></div>
-<div id="htmlwidget-7fabc0c69a63abde6f1e" style="width:100%;height:1132.6px;" class="visNetwork html-widget"></div>
+<div id="htmlwidget-7fabc0c69a63abde6f1e" style="width:100%;height:432.632880098888px;" class="visNetwork html-widget"></div>
 <script type="application/json" data-for="htmlwidget-7fabc0c69a63abde6f1e">{"x":{"nodes":{"id":["C1","H11","H12","H13","C2","H21","H22","C3","H31","H32","C4","H41","H42","C5","H51","H52","H53"],"shape":["circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle","circle"],"shadow":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],"label":["-1.768\n-1.768","-2.238\n-5.561","-0.332\n2.051","0.31\n-0.162","0.051\n0.051","0.102\n1.047","-0.207\n-0.302","-3.023\n-3.023","-0.454\n2.222","-0.362\n-0.169","0.78\n0.78","1.681\n0.539","0.699\n-0.23","-2.828\n-2.828","-4.667\n-18.164","1.908\n2.992","-0.864\n-0.118"],"group":["C","H1","H2","H3","C","H1","H2","C","H1","H2","C","H1","H2","C","H1","H2","H3"],"font.color":["red","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black","black"]},"edges":{"from":["C1","C2","C3","C4","C1","C1","C1","C2","C2","C3","C3","C4","C4","C5","C5","C5"],"to":["C2","C3","C4","C5","H11","H12","H13","H21","H22","H31","H32","H41","H42","H51","H52","H53"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false},"groups":{"C":{"color":"#fbb4ae"},"H1":{"color":"#b3cde3"},"H2":{"color":"#ccebc5"},"useDefaultGroups":true,"H3":{"color":"#decbe4"}}},"groups":["C","H1","H2","H3"],"width":"100%","height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","legend":{"width":0.2,"useGroups":true,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"main":{"text":"Legend","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:14px;text-align:center;"}}},"evals":[],"jsHooks":[]}</script>
 </div>
   </div>
