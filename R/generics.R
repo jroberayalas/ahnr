@@ -28,9 +28,9 @@
 #' summary(ahn)
 #' }
 #'
-summary <- function(x, ...) {
-    UseMethod("summary", x)
-}
+#summary <- function(x, ...) {
+#    UseMethod("summary", x)
+#}
 
 
 #' predict
@@ -64,9 +64,9 @@ summary <- function(x, ...) {
 #' ysim <- predict(ahn, X)
 #' }
 #'
-predict <- function(x, ...) {
-    UseMethod("predict", x)
-}
+#predict <- function(x, ...) {
+#    UseMethod("predict", x)
+#}
 
 
 #' Plot Artificial Hydrocarbon Network
@@ -99,6 +99,6 @@ predict <- function(x, ...) {
 #' plot(ahn)
 #' }
 #'
-plot <- function(x, ...) {
-    UseMethod("plot", x)
-}
+#plot <- function(x, ...) {
+#    UseMethod("plot", x)
+#}

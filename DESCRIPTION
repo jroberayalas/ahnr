@@ -1,7 +1,7 @@
 Package: ahnr
 Type: Package
 Title: An Implementation of the Artificial Hydrocarbon Networks
-Version: 0.3.0
+Version: 0.3.1
 Authors@R: person("Jose Roberto", "Ayala Solares", email = "ichbinjras@gmail.com",
     role = c("aut", "cre"))
 Description: Implementation of the Artificial Hydrocarbon Networks for data

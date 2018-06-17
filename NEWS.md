@@ -1,3 +1,7 @@
+# ahnr 0.3.1
+
+* Removing generics.
+
 # ahnr 0.3.0
 
 * Generic functions updated: summary, predict, plot.
