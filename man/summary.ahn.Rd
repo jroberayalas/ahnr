@@ -7,9 +7,9 @@
 \method{summary}{ahn}(object, ...)
 }
 \arguments{
-\item{...}{further arguments passed to or from other methods.}
+\item{object}{an object of class "\code{ahn}" produced from the \link{fit} function.}
 
-\item{x}{an object of class "\code{ahn}" produced from the \link{fit} function.}
+\item{...}{further arguments passed to or from other methods.}
 }
 \value{
 summary description of the AHN.

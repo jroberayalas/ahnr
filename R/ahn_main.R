@@ -206,7 +206,7 @@ is.ahn <- function(x) inherits(x, "ahn")
 #'
 #' @description Summary method for objects of class \code{ahn}.
 #'
-#' @param x an object of class "\code{ahn}" produced from the \link{fit} function.
+#' @param object an object of class "\code{ahn}" produced from the \link{fit} function.
 #' @param ... further arguments passed to or from other methods.
 #'
 #' @return summary description of the AHN.
@@ -256,8 +256,7 @@ summary.ahn <- function(object, ...) {
 #'
 #' @description Function to simulate a trained Artificial Hydrocarbon Network.
 #'
-#' @param x an object of class "\code{ahn}" produced from the \link{fit} function.
-#' @param newdata a data frame with the inputs to be predicted.
+#' @param object an object of class "\code{ahn}" produced from the \link{fit} function.
 #' @param ... further arguments passed to or from other methods.
 #'
 #' @return predicted output values for inputs in \code{newdata}.

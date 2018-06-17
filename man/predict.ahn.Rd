@@ -7,11 +7,9 @@
 \method{predict}{ahn}(object, ...)
 }
 \arguments{
+\item{object}{an object of class "\code{ahn}" produced from the \link{fit} function.}
+
 \item{...}{further arguments passed to or from other methods.}
-
-\item{x}{an object of class "\code{ahn}" produced from the \link{fit} function.}
-
-\item{newdata}{a data frame with the inputs to be predicted.}
 }
 \value{
 predicted output values for inputs in \code{newdata}.
