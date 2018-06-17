@@ -4,12 +4,12 @@
 \alias{summary.ahn}
 \title{Summary Artificial Hydrocarbon Network}
 \usage{
-\method{summary}{ahn}(x, ...)
+\method{summary}{ahn}(object, ...)
 }
 \arguments{
-\item{x}{an object of class "\code{ahn}" produced from the \link{fit} function.}
-
 \item{...}{further arguments passed to or from other methods.}
+
+\item{x}{an object of class "\code{ahn}" produced from the \link{fit} function.}
 }
 \value{
 summary description of the AHN.

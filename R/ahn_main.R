@@ -232,9 +232,9 @@ is.ahn <- function(x) inherits(x, "ahn")
 #' summary(ahn)
 #' }
 #'
-summary.ahn <- function(x, ...) {
-    stopifnot(is.ahn(x))
-    ahn <- x
+summary.ahn <- function(object, ...) {
+    stopifnot(is.ahn(object))
+    ahn <- object
 
     cat("\nArtificial Hydrocarbon Network trained:\n\n")
     cat("Number of molecules:\n", ahn$network$n, "\n\n")
@@ -257,10 +257,10 @@ summary.ahn <- function(x, ...) {
 #' @description Function to simulate a trained Artificial Hydrocarbon Network.
 #'
 #' @param x an object of class "\code{ahn}" produced from the \link{fit} function.
-#' @param new_data a data frame with the inputs to be predicted.
+#' @param newdata a data frame with the inputs to be predicted.
 #' @param ... further arguments passed to or from other methods.
 #'
-#' @return predicted output values for inputs in \code{new_data}.
+#' @return predicted output values for inputs in \code{newdata}.
 #' @export
 #'
 #' @examples
@@ -284,13 +284,16 @@ summary.ahn <- function(x, ...) {
 #' ysim <- predict(ahn, X)
 #' }
 #'
-predict.ahn <- function(x, new_data, ...) {
+predict.ahn <- function(object, ...) {
     # Security Checking
-    stopifnot(is.ahn(x))
-    ahn <- x
+    stopifnot(is.ahn(object))
+    ahn <- object
 
-    if (!is.data.frame(new_data)) {
-        stop("new_data must be a data frame with the predictor variables. ", call. = FALSE)
+    dots <- list(...)
+    newdata <- dots[[1]]
+
+    if (!is.data.frame(newdata)) {
+        stop("newdata must be a data frame with the predictor variables. ", call. = FALSE)
     }
 
     # Extract network components
@@ -299,11 +302,11 @@ predict.ahn <- function(x, new_data, ...) {
     C <- ahn$network$C
 
     # Initial statemets
-    Yapprox <- matrix(0, nrow = nrow(new_data), ncol = max(unlist(sapply(H, ncol))))
-    indexes <- rep(0, nrow(new_data))
+    Yapprox <- matrix(0, nrow = nrow(newdata), ncol = max(unlist(sapply(H, ncol))))
+    indexes <- rep(0, nrow(newdata))
 
     # Distribute data over molecules
-    molecules <- SimDataInMolecules(new_data, posMolecules)
+    molecules <- SimDataInMolecules(newdata, posMolecules)
 
     # Evaluate AHN-model
     pointer <- 1

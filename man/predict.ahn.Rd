@@ -4,17 +4,17 @@
 \alias{predict.ahn}
 \title{predict}
 \usage{
-\method{predict}{ahn}(x, new_data, ...)
+\method{predict}{ahn}(object, ...)
 }
 \arguments{
+\item{...}{further arguments passed to or from other methods.}
+
 \item{x}{an object of class "\code{ahn}" produced from the \link{fit} function.}
 
-\item{new_data}{a data frame with the inputs to be predicted.}
-
-\item{...}{further arguments passed to or from other methods.}
+\item{newdata}{a data frame with the inputs to be predicted.}
 }
 \value{
-predicted output values for inputs in \code{new_data}.
+predicted output values for inputs in \code{newdata}.
 }
 \description{
 Function to simulate a trained Artificial Hydrocarbon Network.
