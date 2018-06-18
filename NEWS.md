@@ -1,6 +1,7 @@
 # ahnr 0.3.1
 
 * Removing generics.
+* plot function name changed to visualize.
 
 # ahnr 0.3.0
 

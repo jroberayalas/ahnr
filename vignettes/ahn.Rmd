@@ -60,10 +60,10 @@ A summary of the network can be obtained with the `summary` command.
 summary(ahn)
 ```
 
-Finally, the network itself can be plotted with the `plot` command. The text of the carbon of the first molecule is in red.
+Finally, the network itself can be visualized with the `visualize` command. The text of the carbon of the first molecule is in red.
 
 ```{r Example_1_Network_Visualization}
-plot(ahn)
+visualize(ahn)
 ```
 
 
@@ -95,5 +95,5 @@ summary(ahn)
 ```
 
 ```{r Example_2_Network_Visualization}
-plot(ahn)
+visualize(ahn)
 ```

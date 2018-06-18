@@ -333,9 +333,9 @@ predict.ahn <- function(object, ...) {
 }
 
 
-#' Plot Artificial Hydrocarbon Network
+#' Visualize Artificial Hydrocarbon Network
 #'
-#' @description Plot method for objects of class \code{ahn}.
+#' @description Visualize method for objects of class \code{ahn}.
 #'
 #' @param x an object of class "\code{ahn}" produced from the \link{fit} function.
 #' @param ... further arguments passed to visNetwork functions.
@@ -359,11 +359,11 @@ predict.ahn <- function(object, ...) {
 #' # Train AHN
 #' ahn <- fit(Sigma, 5, 0.01, 500)
 #'
-#' # Plot AHN
-#' plot(ahn)
+#' # Visualize AHN
+#' visualize(ahn)
 #' }
 #'
-plot.ahn <- function(x, ...) {
+visualize <- function(x, ...) {
     stopifnot(is.ahn(x))
     vis <- CreateNodesEdges(x)
     visNetwork(vis$nodes, vis$edges, width = "100%", ...) %>%

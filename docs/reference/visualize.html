@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • ahnr</title>
+<title>Visualize Artificial Hydrocarbon Network — visualize • ahnr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,7 +30,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Visualize Artificial Hydrocarbon Network — visualize" />
+
+<meta property="og:description" content="Visualize method for objects of class ahn." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -46,7 +49,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -107,66 +110,70 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Visualize Artificial Hydrocarbon Network</h1>
+    <small class="dont-index">Source: <a href='https://github.com/jroberayalas/ahnr/blob/master/R/ahn_main.R'><code>R/ahn_main.R</code></a></small>
+    <div class="hidden name"><code>visualize.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>Visualize method for objects of class <code>ahn</code>.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="fit.html">fit()</a></code> </p>
-        </td>
-        <td><p>fit</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="is.ahn.html">is.ahn()</a></code> </p>
-        </td>
-        <td><p>Checks if argument is a <code>ahn</code> object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="predict.ahn.html">predict(<i>&lt;ahn&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>predict</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="summary.ahn.html">summary(<i>&lt;ahn&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Summary Artificial Hydrocarbon Network</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="visualize.html">visualize()</a></code> </p>
-        </td>
-        <td><p>Visualize Artificial Hydrocarbon Network</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>visualize</span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>an object of class "<code>ahn</code>" produced from the <a href='fit.html'>fit</a> function.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>further arguments passed to visNetwork functions.</p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>dynamic visualization of the AHN.</p>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='co'># Create data</span>
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fl'>2</span> * <span class='fu'>runif</span>(<span class='fl'>1000</span>) - <span class='fl'>1</span>;
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>sort</span>(<span class='no'>x</span>)
+
+<span class='no'>y</span> <span class='kw'>&lt;-</span> (<span class='no'>x</span> <span class='kw'>&lt;</span> <span class='fl'>0.1</span>) * (<span class='fl'>0.05</span> * <span class='fu'>runif</span>(<span class='fl'>100</span>) + <span class='fu'>atan</span>(<span class='no'>pi</span>*<span class='no'>x</span>)) +
+    (<span class='no'>x</span> <span class='kw'>&gt;=</span> <span class='fl'>0.1</span> <span class='kw'>&amp;</span> <span class='no'>x</span> <span class='kw'>&lt;</span> <span class='fl'>0.6</span>) * (<span class='fl'>0.05</span> * <span class='fu'>runif</span>(<span class='fl'>1000</span>) + <span class='fu'>sin</span>(<span class='no'>pi</span>*<span class='no'>x</span>)) +
+    (<span class='no'>x</span> <span class='kw'>&gt;=</span> <span class='fl'>0.6</span>) * (<span class='fl'>0.05</span> * <span class='fu'>runif</span>(<span class='fl'>1000</span>) + <span class='fu'>cos</span>(<span class='no'>pi</span>*<span class='no'>x</span>))
+
+<span class='co'># Create Sigma list</span>
+<span class='no'>Sigma</span> <span class='kw'>&lt;-</span> <span class='fu'>list</span>(<span class='kw'>X</span> <span class='kw'>=</span> <span class='fu'>data.frame</span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>x</span>), <span class='kw'>Y</span> <span class='kw'>=</span> <span class='fu'>data.frame</span>(<span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>y</span>))
+
+<span class='co'># Train AHN</span>
+<span class='no'>ahn</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='fit.html'>fit</a></span>(<span class='no'>Sigma</span>, <span class='fl'>5</span>, <span class='fl'>0.01</span>, <span class='fl'>500</span>)
+
+<span class='co'># Visualize AHN</span>
+<span class='fu'>visualize</span>(<span class='no'>ahn</span>)
+<span class='co'># }</span><div class='input'>
+</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 
