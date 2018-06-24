@@ -9,7 +9,9 @@
 #'
 #' @return an object of class "\code{ahn}" with the following components:
 #' \itemize{
-#'         \item network: structure of the AHN trained.
+#'         \item network: structure of the AHN trained. It contains the hydrogen coefficient H,
+#'         position of the molecules Pi, data cluster ID per molecule moleculeNumber, number of molecules n,
+#'         and carbon structure C
 #'         \item Yo: original output variable.
 #'         \item Ym: predicted output variable.
 #'         \item eta: learning rate.
@@ -126,6 +128,7 @@ fit <- function(Sigma, n, eta, maxIter = 2000) {
         if (relocationIter >= maxIter) {
             H <- ahn_H
             posMolecules <- ahn_Pi
+            moleculeNumber <- molecules$moleculeNumber
         }
 
         # Update AHN-structure
@@ -134,6 +137,7 @@ fit <- function(Sigma, n, eta, maxIter = 2000) {
         if (overallError[iter] < minOverallError) {
             ahn_H <- H
             ahn_Pi <- posMolecules
+            moleculeNumber <- molecules$moleculeNumber
             minOverallError = overallError[iter]
         }
 
@@ -145,7 +149,7 @@ fit <- function(Sigma, n, eta, maxIter = 2000) {
 
         iter <- iter + 1
     }
-    network = list(H = ahn_H, Pi = ahn_Pi, n = n, C = C)
+    network = list(H = ahn_H, Pi = ahn_Pi, moleculeNumber = moleculeNumber, n = n, C = C)
     ahn <- list(network = network,
                 Yo = Yo,
                 Ym = Ym,

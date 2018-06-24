@@ -89,7 +89,7 @@ DataInMolecules <- function(Sigma, posMolecules) {
     SigmaSplit <- list(X = SigmaSplitX, Y = SigmaSplitY)
     SigmaSplit
 
-    list(SigmaSplit = SigmaSplit, moleculesUsed = sort(unique(apply(dist, 1, which.min))))
+    list(SigmaSplit = SigmaSplit, moleculesUsed = sort(unique(apply(dist, 1, which.min))), moleculeNumber = moleculeNumber)
 }
 
 # RelocateMolecules relocates molecules with no data

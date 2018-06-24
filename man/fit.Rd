@@ -18,7 +18,9 @@ fit(Sigma, n, eta, maxIter = 2000)
 \value{
 an object of class "\code{ahn}" with the following components:
 \itemize{
-        \item network: structure of the AHN trained.
+        \item network: structure of the AHN trained. It contains the hydrogen coefficient H,
+        position of the molecules Pi, data cluster ID per molecule moleculeNumber, number of molecules n,
+        and carbon structure C
         \item Yo: original output variable.
         \item Ym: predicted output variable.
         \item eta: learning rate.
