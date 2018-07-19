@@ -94,7 +94,7 @@ fit <- function(Sigma, n, eta, maxIter = 2000) {
         relocationIter <- 1
         maxRI <- 10
 
-        while (requireRelocation & (relocationIter < maxRI)) {
+        while (requireRelocation & (relocationIter <= maxRI)) {
             molecules <- DataInMolecules(Sigma, posMolecules)
 
             Yo <- Ym <- matrix(0, nrow = nrow(Y), ncol = ncol(Y))

@@ -99,24 +99,22 @@ RelocateMolecules <- function(posMolecules, moleculesUsed, errorMolecule) {
     errorMolecules <- errorMolecule[moleculesUsed, , drop = FALSE]
     moleculeNumber <- sort(apply(errorMolecules, 1, sum), decreasing = TRUE, index.return = TRUE)$ix
 
-    requireRelocation <- !(nrow(errorMolecules) == n)
+    seekMolecule <- 1
 
-    if (requireRelocation) {
-        seekMolecule <- 1
+    for (i in seq_len(n)) {
+        if (!(i %in% moleculesUsed)) {
+            radius <- 1
+            posMolecules[i, ] <- rep(radius, ncol(posMolecules)) * runif(ncol(posMolecules)) + posMolecules[moleculeNumber[seekMolecule], ]
 
-        for (i in seq_len(n)) {
-            if (!(i %in% moleculesUsed)) {
-                radius <- 1
-                posMolecules[i, ] <- rep(radius, ncol(posMolecules)) * runif(ncol(posMolecules)) + posMolecules[moleculeNumber[seekMolecule], ]
+            seekMolecule <- seekMolecule + 1
 
-                seekMolecule <- seekMolecule + 1
-
-                if (seekMolecule > length(moleculeNumber)) {
-                    seekMolecule <- 1
-                }
+            if (seekMolecule > length(moleculeNumber)) {
+                seekMolecule <- 1
             }
         }
     }
+
+    requireRelocation <- !(nrow(errorMolecules) == n)
 
     list(requireRelocation = requireRelocation, posMolecules = posMolecules)
 }

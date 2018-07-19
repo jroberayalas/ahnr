@@ -1,3 +1,8 @@
+# ahnr 0.3.2
+
+* [Issue 2](https://github.com/jroberayalas/ahnr/issues/2) (fit function) solved.
+* [Issue 3](https://github.com/jroberayalas/ahnr/issues/3) (relocate molecules) solved.
+
 # ahnr 0.3.1
 
 * Removing generics.
